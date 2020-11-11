@@ -1,5 +1,6 @@
 package com.example.newsletter.data.service
 
+import com.example.newsletter.models.Article
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -8,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class ArticleOnlineService : ArticleService{
+class ArticleOnlineService : ArticleService {
     private val service: RetrofitApiService
 
     init {

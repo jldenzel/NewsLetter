@@ -5,13 +5,14 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.newsletter.data.ArticleRepository
-import com.example.newsletter.data.service.Article
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.Calendar.getInstance
 
 
 class HomeFragment() : Fragment() {
-    override fun onCreateView(){
+
+    /*override fun onCreateView(){
 
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,6 +22,7 @@ class HomeFragment() : Fragment() {
     override fun onDelete() {
         TODO("Not yet implemented")
     }
+     */
 
 
 
@@ -38,7 +40,7 @@ class HomeFragment() : Fragment() {
      * Cette action doit s'effectuer sur le thread principale
      * Car on ne peut pas modifier les éléments de vue dans un thread secondaire
      */
-    private fun bindData(articles: List<Article>) {
+    private fun bindData(articles: List<ArticleRepository>) {
         lifecycleScope.launch(Dispatchers.Main) {
             //créer l'adapter
             //associer l'adapteur au recyclerview
