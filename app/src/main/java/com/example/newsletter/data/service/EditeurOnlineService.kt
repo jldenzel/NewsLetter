@@ -1,7 +1,6 @@
 package com.example.newsletter.data.service
 
-import com.example.newsletter.models.Article
-import com.example.newsletter.models.ArticleResponse
+import com.example.newsletter.models.EditeurResponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -9,8 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-class ArticleOnlineService : ArticleService {
+class EditeurOnlineService : EditeurService {
     private val service: RetrofitApiService
 
     init {
@@ -28,11 +26,11 @@ class ArticleOnlineService : ArticleService {
             addApiInterceptor(this)
         }.build()
         return Retrofit
-            .Builder()
-            .baseUrl(apiUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(httpClient)
-            .build()
+                .Builder()
+                .baseUrl(apiUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(httpClient)
+                .build()
     }
 
     /**
@@ -55,25 +53,25 @@ class ArticleOnlineService : ArticleService {
                 val original = chain.request()
                 val originalHttpUrl = original.url
                 val url = originalHttpUrl.newBuilder()
-                    .addQueryParameter("apikey", apiKey)
-                    .build()
+                        .addQueryParameter("apikey", apiKey)
+                        .build()
 
                 val requestBuilder = original.newBuilder()
-                    .url(url)
+                        .url(url)
                 val request = requestBuilder.build()
                 return chain.proceed(request)
             }
         })
     }
 
-    override fun getArticles(sujet: String): ArticleResponse {
-        val response = service.list(sujet).execute().body()
-        return response!!
-    }
-
     companion object {
         private const val apiKey = "5dafb84622c1406a8ed6638916314589"
         private const val apiUrl = "https://newsapi.org/"
+    }
+
+    override fun getEditeur(): EditeurResponse {
+        val response = service.editeur().execute().body()
+        return response!!
     }
 
 }
