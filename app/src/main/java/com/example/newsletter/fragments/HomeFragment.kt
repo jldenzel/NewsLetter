@@ -32,7 +32,7 @@ class HomeFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as? NavigationListener)?.let {
-            it.showFragmentinFragment(R.id.fragment_list_all,ListAllFragment())
+            it.showFragmentinFragment(R.id.fragment_list_all,ListAllFragment("actuality"))
             it.showFragmentinFragment(R.id.fragment_list_editor,ListEditorsFragment())
             it.showFragmentinFragment(R.id.fragment_list_country, ListCountriesFragment())
             it.showFragmentinFragment(R.id.fragment_list_categories, ListCategoriesFragment())
