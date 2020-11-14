@@ -8,7 +8,7 @@
     <string name="author">Auteur</string>
     <string name="description">Description</string>
     <string name="title">Titre</string>
-    <string name="editeur_site"><u>lien vers le site de l'éditeur</u></string>
+    <string name="editeur_site"><u>En savoir plus</u></string>
 
 
     <string name="dernierArticles">Derniers Articles</string>
