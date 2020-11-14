@@ -75,6 +75,4 @@ class SourceOnlineService : ArticleService {
         private const val apiKey = "5dafb84622c1406a8ed6638916314589"
         private const val apiUrl = "https://newsapi.org/"
     }
-
-
 }

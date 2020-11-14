@@ -2,19 +2,24 @@ package com.example.newsletter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.widget.SearchView
 import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.newsletter.fragments.HomeFragment
+import com.example.newsletter.fragments.ListArticlesFragment
 
 class MainActivity : AppCompatActivity(),
         NavigationListener {
     private lateinit var toolbar: Toolbar
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
         toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
         showFragment(HomeFragment())
     }
 
@@ -35,5 +40,4 @@ class MainActivity : AppCompatActivity(),
     override fun updateTitle(title: Int) {
         toolbar.setTitle(title)
     }
-
 }
