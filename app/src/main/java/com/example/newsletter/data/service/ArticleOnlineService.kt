@@ -1,6 +1,7 @@
 package com.example.newsletter.data.service
 
 import com.example.newsletter.models.Article
+import com.example.newsletter.models.ArticleResponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -65,13 +66,14 @@ class ArticleOnlineService : ArticleService {
         })
     }
 
-    override fun getArticles(): List<Article> {
-        return service.list().execute().body() ?: listOf()
+    override fun getArticles(sujet: String): ArticleResponse {
+        val response = service.list(sujet).execute().body()
+        return response!!
     }
 
     companion object {
-        private const val apiKey = "YOUR_API_KEY"
-        private const val apiUrl = "THE_API_URL"
+        private const val apiKey = "5dafb84622c1406a8ed6638916314589"
+        private const val apiUrl = "https://newsapi.org/"
     }
 
 }

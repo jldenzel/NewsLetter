@@ -1,6 +1,6 @@
 package com.example.newsletter.data.service
 
-import com.example.newsletter.models.ArticleResponse
+import com.example.newsletter.models.EditeurResponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -8,9 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-class SourceOnlineService : ArticleService {
-
+class EditeurOnlineService : EditeurService {
     private val service: RetrofitApiService
 
     init {
@@ -66,15 +64,14 @@ class SourceOnlineService : ArticleService {
         })
     }
 
-     override fun getArticles(sujet: String): ArticleResponse {
-        val response = service.source(sujet).execute().body()
-        return response!!
-    }
-
     companion object {
         private const val apiKey = "5dafb84622c1406a8ed6638916314589"
         private const val apiUrl = "https://newsapi.org/"
     }
 
+    override fun getEditeur(): EditeurResponse {
+        val response = service.editeur().execute().body()
+        return response!!
+    }
 
 }

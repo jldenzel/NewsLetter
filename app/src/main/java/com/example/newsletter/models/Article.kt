@@ -7,5 +7,6 @@ data class Article (
     val author:String,
     val publish: String,
     val urlImage: String,
-    var favoritebut: Int =0
+    var favoritebut: Int =0,
+    val url: String,
     )

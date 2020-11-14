@@ -17,7 +17,7 @@ interface RetrofitApiService {
     // everything est l'action du web service qu'on veut apeler
     // Elle sera concaténée avec l'url prédéfini dans retrofit
     @GET("/everything")
-    fun list(): Call<List<Article>>
+    fun list(@Query("q") query: String): Call<ArticleResponse>
     @GET("/v2/sources")
     fun editeur() : Call<EditeurResponse>
     @GET("/v2/top-headlines")

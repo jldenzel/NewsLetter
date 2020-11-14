@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">NewsLetter</string>
+    <string name="list_articles">Liste des articles</string>
+    <string name="article_details">Article</string>
+    <string name="home">Accueil</string>
+
+    <string name="date">Date</string>
+    <string name="author">Auteur</string>
+    <string name="description">Description</string>
+    <string name="title">Titre</string>
+    <string name="editeur_site"><u>En savoir plus</u></string>
+
+
+    <string name="dernierArticles">Derniers Articles</string>
+    <string name="allArticles">Articles triés</string>
+    <string name="byEditor">Par Editeur</string>
+    <string name="byCategorie">Par Catégorie</string>
+    <string name="byCountry">Par Pays</string>
 </resources>

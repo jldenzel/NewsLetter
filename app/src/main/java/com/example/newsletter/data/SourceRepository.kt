@@ -1,6 +1,5 @@
-package com.example.newsletter
+package com.example.newsletter.data
 
-import com.example.newsletter.data.ArticleRepository
 import com.example.newsletter.data.service.ArticleOnlineService
 import com.example.newsletter.models.ArticleResponse
 
