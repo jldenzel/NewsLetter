@@ -9,8 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class SourceOnlineService {
-
+class SourceOnlineService : ArticleService {
 
     private val service: RetrofitApiService
 
@@ -67,7 +66,7 @@ class SourceOnlineService {
         })
     }
 
-     fun getArticles(sujet: String): ArticleResponse {
+     override fun getArticles(sujet: String): ArticleResponse {
         val response = service.source(sujet).execute().body()
         return response!!
     }
