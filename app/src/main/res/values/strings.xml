@@ -12,8 +12,8 @@
 
 
     <string name="dernierArticles">Derniers Articles</string>
-    <string name="allArticles">Articles triés</string>
-    <string name="byEditor">Par Editeur</string>
-    <string name="byCategorie">Par Catégorie</string>
-    <string name="byCountry">Par Pays</string>
+    <string name="allArticles">Trier Les Articles</string>
+    <string name="byEditor">Editeurs</string>
+    <string name="byCategorie">Catégories</string>
+    <string name="byCountry">Pays</string>
 </resources>
