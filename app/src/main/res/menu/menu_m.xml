@@ -10,12 +10,12 @@
 
     <item
         android:orderInCategory="100"
-        android:title="About Us"
+        android:title="À propos de nous"
         app:showAsAction="always"
         android:id="@+id/btn_a_propos"/>
 
     <item
-        android:title="Favorite"
+        android:title="Favoris"
         android:id="@+id/btn_favorite_toolbar"
         android:orderInCategory="200"
         android:icon="@drawable/ic_baseline_favorite_24"

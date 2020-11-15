@@ -67,5 +67,4 @@ class MainActivity : AppCompatActivity(),
         return super.onCreateOptionsMenu(menu)
     }
 
-
 }
