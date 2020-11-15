@@ -1,6 +1,5 @@
 package com.example.newsletter.adapter
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +12,7 @@ import com.example.newsletter.R
 import com.example.newsletter.models.Article
 import com.example.newsletter.models.ArticleResponse
 
+
 class ArticleAdapter(
     items: ArticleResponse, val handler: ListArticlesHandler
 ) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
@@ -22,15 +22,15 @@ class ArticleAdapter(
             .inflate(R.layout.articles_item, parent, false)
         return ViewHolder(view)
     }
-    /*This method will update our recycleView with the element at the position given
-    in the parameter. In order to load into memory only the elements displayed on the screen.*/
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article: Article = mArticles.articles[position]
-
-        holder.mArticleDate.text = article.publish
-        holder.mArticleName.text = article.author
+        // Display Neighbour Name
         holder.mArticleTitle.text = article.title
-        holder.mArticleDesc.text = article.description
+        holder.mArticleDescription.text = article.description
+        holder.mArticleName.text    = article.author
+        holder.mArticleDate.text = article.publish
+        //init favorite button
         // Init favorite button
         if(article.favoritebut == 0){
             holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
@@ -38,10 +38,11 @@ class ArticleAdapter(
             holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
         }
 
+
         holder.mArticleTitle.setOnClickListener {
             handler.showArticle(article)
         }
-        holder.mArticleDesc.setOnClickListener {
+        holder.mArticleDescription.setOnClickListener {
             handler.showArticle(article)
         }
         holder.mArticleFavorite.setOnClickListener {
@@ -59,7 +60,7 @@ class ArticleAdapter(
             handler.showArticle(article)
         }
         val context = holder.itemView.context
-        // Display Avatar
+        // Display  Avatar
         Glide.with(context)
             .load(article.urlImage)
             .placeholder(R.drawable.ic_baseline_image_24)
@@ -67,7 +68,7 @@ class ArticleAdapter(
             .skipMemoryCache(false)
             .into(holder.mArticleAvatar)
     }
-    //This function will return the total number of items in our recycleView.
+
     override fun getItemCount(): Int {
         return mArticles.articles.size
     }
@@ -78,17 +79,17 @@ class ArticleAdapter(
         val mArticleName: TextView
         val mArticleTitle: TextView
         val mArticleDate: TextView
-        val mArticleDesc: TextView
+        val mArticleDescription: TextView
         val mArticleFavorite: ImageButton
 
         init {
             // Enable click on item
-            mArticleDesc = view.findViewById(R.id.item_list_desc)
-            mArticleTitle = view.findViewById(R.id.item_list_name)
             mArticleAvatar = view.findViewById(R.id.item_list_avatar)
             mArticleName = view.findViewById(R.id.item_list_author)
-            mArticleFavorite = view.findViewById(R.id.item_list_favorite_button)
+            mArticleTitle = view.findViewById(R.id.item_list_name)
             mArticleDate = view.findViewById(R.id.item_list_date)
+            mArticleDescription = view.findViewById(R.id.item_list_desc)
+            mArticleFavorite = view.findViewById(R.id.item_list_favorite_button)
         }
     }
 }

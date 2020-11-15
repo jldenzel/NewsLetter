@@ -1,5 +1,7 @@
 package com.example.newsletter.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +13,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsletter.NavigationListener
 import com.example.newsletter.R
-import com.example.newsletter.adapter.ListButtonAdapter
-import com.example.newsletter.adapter.SourceHandler
-import com.example.newsletter.data.EditorRepository
-import com.example.newsletter.models.EditeurResponse
+import com.example.newsletter.adapter.ArticleAdapter
+import com.example.newsletter.adapter.ArticleDetailsAdapter
+import com.example.newsletter.adapter.ListArticlesHandler
+import com.example.newsletter.data.SourceRepository
+import com.example.newsletter.models.Article
+import com.example.newsletter.models.ArticleResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ListEditorsFragment : Fragment(), SourceHandler {
+class SourceArticleFragment (subject: String): Fragment(), ListArticlesHandler {
     private lateinit var recyclerView: RecyclerView
+    val subject = subject
     /**
      * Fonction permettant de définir une vue à attacher à un fragment
      */
@@ -28,9 +33,9 @@ class ListEditorsFragment : Fragment(), SourceHandler {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.list_button, container, false)
-        recyclerView = view.findViewById(R.id.list_button)
-        recyclerView.layoutManager = LinearLayoutManager(context,RecyclerView.HORIZONTAL, false)
+        val view = inflater.inflate(R.layout.list_articles_fragment, container, false)
+        recyclerView = view.findViewById(R.id.articles_list)
+        recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.addItemDecoration(
                 DividerItemDecoration(
                         requireContext(),
@@ -42,13 +47,15 @@ class ListEditorsFragment : Fragment(), SourceHandler {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getEditeurs()
-
+        getArticles(subject)
     }
-    private fun getEditeurs() {
+    /**
+     * Récupère la liste des articles dans un thread secondaire
+     */
+    private fun getArticles(subject: String) {
         lifecycleScope.launch(Dispatchers.IO) {
-            val editeurs = EditorRepository.getInstance().getEditeur()
-            bindData(editeurs)
+            val articles = SourceRepository.getInstance().getArticles(subject)
+            bindData(articles)
         }
     }
 
@@ -57,19 +64,33 @@ class ListEditorsFragment : Fragment(), SourceHandler {
      * Cette action doit s'effectuer sur le thread principale
      * Car on ne peut mas modifier les éléments de vue dans un thread secondaire
      */
-    private fun bindData(editeurs: EditeurResponse) {
+    private fun bindData(articles: ArticleResponse) {
         lifecycleScope.launch(Dispatchers.Main) {
             //créer l'adapter
             //associer l'adapteur au recyclerview
-            val adapter = ListButtonAdapter(editeurs, this@ListEditorsFragment)
+            val adapter = ArticleAdapter(articles,this@SourceArticleFragment)
             recyclerView.adapter = adapter
         }
     }
 
-    override fun showSource(source: String) {
+    override fun showArticle(article: Article) {
         (activity as? NavigationListener)?.let {
-            it.showFragment(SourceArticleFragment(source))
+            it.updateTitle(R.string.article_details)
+        }
+        val adapter = ArticleDetailsAdapter(article,this)
+        recyclerView.adapter = adapter
+    }
+
+    override fun back() {
+        (activity as? NavigationListener)?.let {
             it.updateTitle(R.string.list_articles)
         }
+        getArticles(subject)
+    }
+
+    override fun showPage(url: String) {
+        val chemin: Uri = Uri.parse(url)
+        val naviguer = Intent(Intent.ACTION_VIEW,chemin)
+        startActivity(naviguer)
     }
 }
