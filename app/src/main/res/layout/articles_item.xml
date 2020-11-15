@@ -10,33 +10,34 @@
 
     <ImageView
         android:id="@+id/item_list_avatar"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="10dp"
         android:src="@drawable/ic_baseline_image_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/item_list_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
         android:maxWidth="250dp"
-        android:maxLines="1"
-        app:layout_constraintStart_toEndOf="@+id/item_list_avatar"
-        app:layout_constraintBottom_toTopOf="@+id/item_list_desc"
+        android:maxLines="4"
+        app:layout_constraintBottom_toTopOf="@+id/item_list_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="16dp"
         tools:text="@string/title" />
 
     <TextView
         android:id="@+id/item_list_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
         android:maxWidth="250dp"
         android:maxLines="4"
@@ -48,8 +49,8 @@
         android:id="@+id/item_list_author"
         android:layout_width="68dp"
         android:layout_height="15dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
         android:maxWidth="250dp"
         android:maxLines="1"
         android:textStyle="bold"
@@ -61,8 +62,8 @@
         android:id="@+id/item_list_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="36dp"
         android:maxWidth="250dp"
         android:maxLines="1"
         android:textStyle="bold"
@@ -79,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/item_list_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/item_list_desc"
-        app:srcCompat="@drawable/ic_baseline_favorite_border_24"
-        />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
