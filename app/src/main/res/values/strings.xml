@@ -11,7 +11,7 @@
     <string name="editeur_site"><u>En savoir plus</u></string>
 
 
-    <string name="dernierArticles">Derniers Articles</string>
+    <string name="dernierArticles">Derniers articles -> cliquez pour afficher +</string>
     <string name="allArticles">Trier Les Articles</string>
     <string name="byEditor">Editeurs</string>
     <string name="byCategorie">Catégories</string>

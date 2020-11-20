@@ -24,7 +24,7 @@ class HomeFragment : Fragment(){
             savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.homepage, container, false)
-        tousArticles = view.findViewById(R.id.text_last_categories)
+        tousArticles = view.findViewById(R.id.text_last_articles)
 
         return view
     }
