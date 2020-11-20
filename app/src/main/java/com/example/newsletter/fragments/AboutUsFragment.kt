@@ -21,7 +21,6 @@ class AboutUsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -30,6 +29,4 @@ class AboutUsFragment : Fragment() {
         menu.findItem(R.id.btn_home_toolbar).isVisible = true
         super.onPrepareOptionsMenu(menu)
     }
-
-
 }

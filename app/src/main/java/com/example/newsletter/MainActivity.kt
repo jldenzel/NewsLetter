@@ -66,5 +66,20 @@ class MainActivity : AppCompatActivity(),
 
         return super.onCreateOptionsMenu(menu)
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.btn_a_propos -> {
+                showFragment(AboutUsFragment())
+                updateTitle(R.string.aboutus)
+                true
+            }
+            R.id.btn_favorite_toolbar -> {
+                showFragment(AboutUsFragment())
+                updateTitle(R.string.aboutus)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }
