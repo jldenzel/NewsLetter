@@ -74,9 +74,10 @@ class MainActivity : AppCompatActivity(),
                 updateTitle(R.string.aboutus)
                 true
             }
-            R.id.btn_favorite_toolbar -> {
-                showFragment(AboutUsFragment())
-                updateTitle(R.string.aboutus)
+            //clic sur home
+            R.id.btn_home_toolbar -> {
+                showFragment(HomeFragment())
+                updateTitle(R.string.home)
                 true
             }
             else -> super.onOptionsItemSelected(item)

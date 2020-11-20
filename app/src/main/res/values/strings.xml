@@ -25,6 +25,5 @@
     <string name="linkrepo">https://github.com/jldenzel/NewsLetter</string>
     <string name="libraries_used">Librairies Externes Utilisées</string>
     <string name="functionalities">Fonctionnalités de notre application</string>
-
     <string name="aboutus">A propos de nous</string>
 </resources>
