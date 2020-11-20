@@ -46,23 +46,6 @@ class MainActivity : AppCompatActivity(),
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_m, menu)
         menu.findItem(R.id.btn_home_toolbar).isVisible = false
-        val searchItem = menu?.findItem(R.id.action_search)
-        val searchView = searchItem?.actionView as SearchView
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean {
-                if (p0.isNullOrBlank()) {
-                    //afficher un label recherche vide
-                } else {
-                    showFragment(ListArticlesFragment(p0))
-                }
-                return false
-            }
-
-            override fun onQueryTextChange(p0: String?): Boolean {
-                return false
-            }
-        })
 
         return super.onCreateOptionsMenu(menu)
     }
