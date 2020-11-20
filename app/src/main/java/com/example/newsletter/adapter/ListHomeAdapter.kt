@@ -28,7 +28,7 @@ class ListHomeAdapter (
         holder.mArticleTitle.text = article.title
         holder.mArticleDescription.text = article.description
         holder.mArticleName.text    = article.author
-        holder.mArticleDate.text = article.publish
+        holder.mArticleDate.text = article.publishedAt
         //init favorite button
         // Init favorite button
         if(article.favoritebut == 0){
@@ -53,7 +53,7 @@ class ListHomeAdapter (
         val context = holder.itemView.context
         // Display  Avatar
         Glide.with(context)
-                .load(article.urlImage)
+                .load(article.urlToImage)
                 .placeholder(R.drawable.ic_baseline_image_24)
                 .error(R.drawable.ic_baseline_image_24)
                 .skipMemoryCache(false)
