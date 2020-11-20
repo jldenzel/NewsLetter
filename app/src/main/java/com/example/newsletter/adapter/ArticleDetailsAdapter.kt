@@ -85,7 +85,7 @@ class ArticleDetailsAdapter (
             mArticleName = view.findViewById(R.id.item_list_author)
             mArticleDescription = view.findViewById(R.id.item_list_desc)
             mArticleRetour = view.findViewById(R.id.item_back)
-            mArticleEditeur = view.findViewById(R.id.item_list_editeur)
+            mArticleEditeur = view.findViewById(R.id.item_list_editor)
             mArticleFavorite = view.findViewById(R.id.item_list_favorite_button)
             mArticleTitle = view.findViewById(R.id.item_list_name)
             mArticleDate = view.findViewById(R.id.item_list_date)

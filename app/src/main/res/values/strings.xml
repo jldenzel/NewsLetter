@@ -16,4 +16,13 @@
     <string name="byEditor">Editeurs</string>
     <string name="byCategorie">Catégories</string>
     <string name="byCountry">Pays</string>
+
+    <string name="group">Membres du projet</string>
+    <string name="nizeyimana">Jean-Eric NIZEYIMANA / GitHub: @jldenzel</string>
+    <string name="babeau">Corentin BABEAU / GitHub: @Urukrode</string>
+    <string name="argento">Jordan ARGENTO</string>
+    <string name="repo">Repository du projet (Github)</string>
+    <string name="linkrepo">https://github.com/jldenzel/NewsLetter</string>
+    <string name="libraries_used">Librairies Externes Utilisées</string>
+    <string name="functionalities">Fonctionnalités de notre application</string>
 </resources>
