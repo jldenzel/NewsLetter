@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/item_list_avatar"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="279dp"
+        android:layout_height="178dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
         android:src="@drawable/ic_baseline_image_24"

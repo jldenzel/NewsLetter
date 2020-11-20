@@ -31,6 +31,7 @@
         app:layout_constraintBottom_toTopOf="@+id/item_list_avatar"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteX="16dp"
+        android:textStyle="bold"
         tools:text="@string/title" />
 
     <TextView
