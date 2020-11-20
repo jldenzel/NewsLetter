@@ -11,7 +11,7 @@ class ListCategoryAdapter (val handler: SourceHandler): RecyclerView.Adapter<Lis
 
     val listCategory: MutableList<String> = mutableListOf(
             "business",
-            "entertainement",
+            "entertainment",
             "general",
             "health",
             "science",
