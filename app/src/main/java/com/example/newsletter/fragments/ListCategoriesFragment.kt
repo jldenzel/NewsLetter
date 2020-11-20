@@ -48,5 +48,4 @@ class ListCategoriesFragment : Fragment(), SourceHandler {
             it.updateTitle(R.string.list_articles)
         }
     }
-
 }
