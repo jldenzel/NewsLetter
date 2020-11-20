@@ -12,14 +12,17 @@ class ListCountryAdapter (val handler: SourceHandler) : RecyclerView.Adapter<Lis
 
     val listCountry: MutableList<Pays> = mutableListOf(
             Pays("France","fr"),
-            Pays("USA","us"),
-            Pays("Argentina","ar"),
-            Pays("Belgique","be"),
+            Pays("Belgium","be"),
+            Pays("Germany","de"),
+            Pays("United States","us"),
+            Pays("Switzerland","ch"),
+            Pays("Russia","ru"),
             Pays("China","cn"),
             Pays("Japan","jp"),
             Pays("Nigeria","ng"),
-            Pays("Australia","au"),
-            Pays("United Kingdom","gb")
+            Pays("United Kingdom","gb"),
+            Pays("Italy","it"),
+            Pays("Portugal","pt")
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
