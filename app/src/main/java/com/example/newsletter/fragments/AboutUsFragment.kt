@@ -22,11 +22,11 @@ class AboutUsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-
     override fun onPrepareOptionsMenu(menu: Menu) {
         menu.findItem(R.id.btn_favorite_toolbar).isVisible = false
         menu.findItem(R.id.btn_a_propos).isVisible = false
         menu.findItem(R.id.btn_home_toolbar).isVisible = true
+        menu.findItem(R.id.action_search).isVisible = false
         super.onPrepareOptionsMenu(menu)
     }
 }
