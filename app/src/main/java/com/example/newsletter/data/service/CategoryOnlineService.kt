@@ -66,7 +66,7 @@ class CategoryOnlineService : ArticleService {
         return response!!
     }
     companion object {
-        private const val apiKey = "5dafb84622c1406a8ed6638916314589"
+        private const val apiKey = "1f79673f0d9341f6b04393b680c0a2d2"
         private const val apiUrl = "https://newsapi.org/"
     }
 }
